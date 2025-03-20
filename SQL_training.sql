@@ -52,3 +52,38 @@ SELECT Coalesce(
     NULL
 ) as SecondHighestSalary;
 
+---
+
+-- Задача 2:
+-- Найти сотрудников, у которых зарплата выше, чем у их менеджеров
+
+--  Таблица Employee
+
+CREATE TABLE Employee (
+    Id INT PRIMARY KEY,
+    Name VARCHAR(255),
+    Salary INT,
+    ManagerId INT
+);
+
+INSERT INTO Employee (Id, Name, Salary, ManagerId) VALUES
+(1, 'John', 1000, NULL),
+(2, 'Sally', 2000, 1),
+(3, 'Mark', 3000, 1),
+(4, 'Pam', 4000, 2),
+(5, 'Alex', 5000, 2);
+
+-- Требуется:
+
+-- Написать SQL-запрос, который вернет имена сотрудников, у которых зарплата выше, чем у их менеджеров.
+
+--  Ожидаемый результат:
+
+-- Employee
+
+-- Sally
+
+-- Alex
+
+-- Решение:
+
